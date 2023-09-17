@@ -4,14 +4,14 @@ import { movies } from "../data";
 function Movies() {
   return (
   <div>
+    <h1>Movies Page</h1>
     {movies.map((movie)=>(
-      <div>
-        <h1>Movie: {movie.title}</h1>
-        <p>Time: {movie.time}</p>
+      <div key={movie.title}>
+        <h2>{movie.title}</h2>
+        <p>Runtime: {movie.time} min.</p>
         <ul>
-          Genres: 
-          {movie.genres.map((genre)=>(
-            <li>{genre}</li>
+          {movie.genres.map((genre) => (
+            <li key={genre}>{genre}</li>
           ))}
         </ul>
       </div>
